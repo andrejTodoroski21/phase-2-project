@@ -1,0 +1,10 @@
+{
+    "workouts":[
+        {
+            "id":1,
+            "exercise": "Bench Press",
+            "image": "https://www.inspireusafoundation.org/wp-content/uploads/2022/04/barbell-bench-press.gif"
+
+        }
+    ]
+}
