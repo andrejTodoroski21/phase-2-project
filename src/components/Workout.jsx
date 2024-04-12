@@ -58,7 +58,7 @@ function Workout({workout, workouts, setWorkouts}){
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify({weights:workout.weight+5})
+            body: JSON.stringify({weight:workout.weight+5})
         })
         .then(res => res.json())
         .then(updatedWeights => {
@@ -102,9 +102,9 @@ function Workout({workout, workouts, setWorkouts}){
       }
     </div>
 
-      <button onClick={handleReps}>{workouts.reps} Add reps</button>
-      <button onClick={handleSets}>{workouts.sets} Add sets</button>
-      <button onClick={handleWeight}>{workouts.weight} Add weight</button>
+      <button onClick={handleReps}>{workout.reps} reps</button>
+      <button onClick={handleSets}>{workout.sets}  sets</button>
+      <button onClick={handleWeight}>{workout.weight} weight</button>
       <button onClick ={handleDeleteWorkout}>Remove</button>
         </div>
     )

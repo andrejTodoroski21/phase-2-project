@@ -50,15 +50,18 @@
       "exercise": "Lat Pulldown",
       "image": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif",
       "description": "The lat pulldown is a pulling exercise that primarily targets the latissimus dorsi muscles (commonly known as “lats”) in your back. It involves pulling a cable bar or handle down towards your chest while seated on a machine specifically designed for this exercise. The lat pulldown is typically performed with a wide grip, but can also be done with a narrow grip or underhand grip to target different muscle groups in the back and arms. It is a popular exercise for building upper body strength and improving posture.",
-      "weight": 0,
-      "sets": 0,
-      "reps": 0
+      "weight": 5,
+      "sets": 1,
+      "reps": 1
     },
     {
-      "id": "2c3e",
+      "id": 7,
       "exercise": "Hammer Curl",
       "image": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Hammer-Curl.gif",
-      "description": "Hammer Curl is a strength training exercise that primarily targets the biceps muscles in the upper arm. It is performed by holding a weight in each hand with a neutral grip, which means the palms of the hands are facing each other, and then curling the weights towards the shoulders. The neutral grip targets the brachioradialis muscle, which is located on the outer forearm and assists in flexing the elbow joint."
+      "description": "Hammer Curl is a strength training exercise that primarily targets the biceps muscles in the upper arm. It is performed by holding a weight in each hand with a neutral grip, which means the palms of the hands are facing each other, and then curling the weights towards the shoulders. The neutral grip targets the brachioradialis muscle, which is located on the outer forearm and assists in flexing the elbow joint.",
+      "weight": 0,
+      "sets": 11,
+      "reps": 7
     }
   ]
 }

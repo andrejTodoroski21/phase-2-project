@@ -72,7 +72,7 @@ function WorkoutForm({ setWorkouts }) {
         fetch(`http://localhost:3000/workouts`, {
             method: "POST",
             headers: {
-                "Content-type": "application/json",
+                "Content-Type": "application/json",
                 "Accept": "application/json"
             },
             body: JSON.stringify(formData)
