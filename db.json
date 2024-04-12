@@ -1,10 +1,64 @@
 {
-    "workouts":[
-        {
-            "id":1,
-            "exercise": "Bench Press",
-            "image": "https://www.inspireusafoundation.org/wp-content/uploads/2022/04/barbell-bench-press.gif"
-
-        }
-    ]
+  "workouts": [
+    {
+      "id": 1,
+      "exercise": "Bench Press",
+      "image": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Bench-Press.gif",
+      "description": "A relaiable and great exercise for building the chest muscles",
+      "weight": 0,
+      "sets": 0,
+      "reps": 0
+    },
+    {
+      "id": 2,
+      "exercise": "Double Arm Curl",
+      "image": "https://fitnessprogramer.com/wp-content/uploads/2022/04/Double-Arm-Dumbbell-Curl.gif",
+      "description": "The double arm curl is an isolated exercise commonly used in weight training programs to build and strengthen the biceps muscle group",
+      "weight": 0,
+      "sets": 0,
+      "reps": 0
+    },
+    {
+      "id": 3,
+      "exercise": "Tricep Pushdown",
+      "image": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Pushdown.gif",
+      "description": "The primary focus of this exercise is to target and strengthen the triceps muscles, which are essential for arm extension and pushing movements.",
+      "weight": 0,
+      "sets": 0,
+      "reps": 0
+    },
+    {
+      "id": 4,
+      "exercise": "Kneeling Cable Crunch",
+      "image": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Kneeling-Cable-Crunch.gif",
+      "description": "The first muscle group that works in this exercise is your rectus abdominis, your six-pack muscles. It also helps to work on other core muscles. In order to get the most out of this exercise, it is important that the movement is done in the right shape. It may not be suitable for beginners and people with back injuries.",
+      "weight": 0,
+      "sets": 0,
+      "reps": 0
+    },
+    {
+      "id": 5,
+      "exercise": "Cable Lateral Raise",
+      "image": "https://fitnessprogramer.com/wp-content/uploads/2021/07/one-arm-Cable-Lateral-Raise.gif",
+      "description": "The cable lateral raise is an effective exercise for targeting the lateral deltoids and improving shoulder strength and stability. It can be incorporated into your upper body or shoulder workout routine, or used as part of a full-body strength training program.",
+      "weight": 0,
+      "sets": 0,
+      "reps": 0
+    },
+    {
+      "id": 6,
+      "exercise": "Lat Pulldown",
+      "image": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif",
+      "description": "The lat pulldown is a pulling exercise that primarily targets the latissimus dorsi muscles (commonly known as “lats”) in your back. It involves pulling a cable bar or handle down towards your chest while seated on a machine specifically designed for this exercise. The lat pulldown is typically performed with a wide grip, but can also be done with a narrow grip or underhand grip to target different muscle groups in the back and arms. It is a popular exercise for building upper body strength and improving posture.",
+      "weight": 0,
+      "sets": 0,
+      "reps": 0
+    },
+    {
+      "id": "2c3e",
+      "exercise": "Hammer Curl",
+      "image": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Hammer-Curl.gif",
+      "description": "Hammer Curl is a strength training exercise that primarily targets the biceps muscles in the upper arm. It is performed by holding a weight in each hand with a neutral grip, which means the palms of the hands are facing each other, and then curling the weights towards the shoulders. The neutral grip targets the brachioradialis muscle, which is located on the outer forearm and assists in flexing the elbow joint."
+    }
+  ]
 }

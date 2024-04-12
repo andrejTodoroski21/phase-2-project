@@ -1,34 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
+import WorkoutContainer from "./WorkoutContainer"
+import WorkoutForm from "./WorkoutForm"
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [workouts, setWorkouts] = useState([])
+
+  useEffect(()=> {
+    fetch('http://localhost:3000/workouts')
+    .then(response => response.json())
+    .then(workout => setWorkouts(workout))
+  },[])
+  console.log(workouts)
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='App'>
+      {/* div for the title */}
+      <div id='title'>
+        <h1 id='elite-power' >Elite <span id='p'>P</span>owe<span id='r'>r</span></h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+      <main>
+        <div className='flex-container'>
+          <WorkoutContainer workouts={workouts} setWorkouts={setWorkouts}/>
+        </div>
+      </main>
+      
+      <WorkoutForm setWorkouts={setWorkouts}/>
+
+    </div>
   )
 }
 
