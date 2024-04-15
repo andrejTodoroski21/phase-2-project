@@ -26,8 +26,9 @@ function App() {
           <WorkoutContainer workouts={workouts} setWorkouts={setWorkouts}/>
         </div>
       </main>
-      
+      <div className='sidebar'>
       <WorkoutForm setWorkouts={setWorkouts}/>
+      </div>
 
     </div>
   )

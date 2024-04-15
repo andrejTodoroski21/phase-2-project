@@ -7,14 +7,14 @@ function Workout({workout, workouts, setWorkouts}){
         setFlipped(!flipped)
     }
 
-    function handleReps(){
+    function incramentReps(){
         fetch(`http://localhost:3000/workouts/${workout.id}`,{
             method: "PATCH",
-            header:{
+            headers:{
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify({reps:workout.reps+1})
+            body: JSON.stringify({reps: workout.reps + 1})
         })
         .then(res => res.json())
         .then(updatedReps => {
@@ -29,10 +29,32 @@ function Workout({workout, workouts, setWorkouts}){
         })
     }
 
-    function handleSets(){
+    function decrementReps(){
         fetch(`http://localhost:3000/workouts/${workout.id}`,{
             method: "PATCH",
-            header:{
+            headers:{
+                'Content-type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({reps: workout.reps - 1})
+        })
+        .then(res => res.json())
+        .then(updatedReps => {
+           const updatedRepData =  workouts.map(rep =>{
+            if(rep.id !== updatedReps.id){
+                return rep
+            }else{
+                return updatedReps
+            }
+           })
+           setWorkouts(updatedRepData)
+        })
+    }
+
+    function incramentSets(){
+        fetch(`http://localhost:3000/workouts/${workout.id}`,{
+            method: "PATCH",
+            headers:{
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
             },
@@ -51,14 +73,58 @@ function Workout({workout, workouts, setWorkouts}){
         })
     }
 
-    function handleWeight(){
+    function decrementSets(){
         fetch(`http://localhost:3000/workouts/${workout.id}`,{
             method: "PATCH",
-            header:{
+            headers:{
+                'Content-type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({sets:workout.sets - 1})
+        })
+        .then(res => res.json())
+        .then(updatedSets => {
+           const updatedSetData =  workouts.map(set =>{
+            if(set.id !== updatedSets.id){
+                return set
+            }else{
+                return updatedSets
+            }
+           })
+           setWorkouts(updatedSetData)
+        })
+    }
+
+    function incramentWeight(){
+        fetch(`http://localhost:3000/workouts/${workout.id}`,{
+            method: "PATCH",
+            headers:{
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
             },
             body: JSON.stringify({weight:workout.weight+5})
+        })
+        .then(res => res.json())
+        .then(updatedWeights => {
+           const updatedWeightData =  workouts.map(weight =>{
+            if(weight.id !== updatedWeights.id){
+                return weight
+            }else{
+                return updatedWeights
+            }
+           })
+           setWorkouts(updatedWeightData)
+        })
+    }
+
+    function decrementWeight(){
+        fetch(`http://localhost:3000/workouts/${workout.id}`,{
+            method: "PATCH",
+            headers:{
+                'Content-type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({weight:workout.weight - 5})
         })
         .then(res => res.json())
         .then(updatedWeights => {
@@ -82,31 +148,34 @@ function Workout({workout, workouts, setWorkouts}){
 
     }
 
-
-
-
-
-
-
-
     return(
         <div className="style-workout">
             <div className="workout-item" onClick={flipWorkout}>
                 {flipped ? 
                     <img src={workout.image} alt={workout.title}/>
                     :
-      <>
-        <h3>{workout.name}</h3>
-        <h4>{workout.description}</h4>
-      </>
-      }
+                    <>
+                        <h3>{workout.name}</h3>
+                        <h4>{workout.description}</h4>
+                    </>
+                }
+            </div>
+            
+            <div className="button-styles">
+                <span>
+                <button onClick={decrementReps} id="Dreps-button">-</button>{workout.reps} reps <button onClick={incramentReps} id="Ireps-button">+</button>
+                </span>
+                <span>
+                <button onClick={decrementSets} id="Dsets-button">-</button>{workout.sets} sets <button onClick={incramentSets} id="Isets-button">+</button>
+                </span>
+                <span>
+                <button onClick={decrementWeight} id="Dweight-button">-</button>{workout.weight} Lbs <button onClick={incramentWeight} id="Iweight-button">+</button>
+                </span>
+                <span>
+                <button onClick ={handleDeleteWorkout} id="remove">Remove</button>  
+                </span>
+            </div>
     </div>
-
-      <button onClick={handleReps}>{workout.reps} reps</button>
-      <button onClick={handleSets}>{workout.sets}  sets</button>
-      <button onClick={handleWeight}>{workout.weight} weight</button>
-      <button onClick ={handleDeleteWorkout}>Remove</button>
-        </div>
     )
 }
 
