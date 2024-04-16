@@ -2,6 +2,7 @@ import { useState } from "react"
 
 function Workout({workout, workouts, setWorkouts}){
     const [flipped, setFlipped] = useState(true)
+    const [savedWorkouts, setSavedWorkouts] = useState([]);
 
     function flipWorkout(){
         setFlipped(!flipped)
@@ -148,6 +149,35 @@ function Workout({workout, workouts, setWorkouts}){
 
     }
 
+    
+     const handleAddToProgram = (workout) => {
+        setSavedWorkouts([...savedWorkouts, workout]);
+        fetch(`http://localhost:3000/SavedWorkouts`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+                id: workout.id,
+                exercise: workout.exercise,
+                image: workout.image, 
+                description: workout.description,
+                reps: workout.reps,
+                sets: workout.sets,
+                weight: workout.weight
+                }),
+          })
+            .then(response => response.json())
+            .then(data => {
+              console.log(data);
+            })
+            .catch(error => {
+              console.error(error);
+            });
+        };
+        
+
+
     return(
         <div className="style-workout">
             <div className="workout-item" onClick={flipWorkout}>
@@ -160,7 +190,7 @@ function Workout({workout, workouts, setWorkouts}){
                     </>
                 }
             </div>
-            
+
             <div className="button-styles">
                 <span>
                 <button onClick={decrementReps} id="Dreps-button">-</button>{workout.reps} reps <button onClick={incramentReps} id="Ireps-button">+</button>
@@ -173,6 +203,9 @@ function Workout({workout, workouts, setWorkouts}){
                 </span>
                 <span>
                 <button onClick ={handleDeleteWorkout} id="remove">Remove</button>  
+                </span>
+                <span> 
+                <button onClick={() => handleAddToProgram(workout)} id="Add-To-Program">Add to program</button>
                 </span>
             </div>
     </div>
