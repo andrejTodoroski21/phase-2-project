@@ -2,8 +2,20 @@ import { Link } from "react-router-dom";
 
 function Navbar(){
     return(
-        <div>
-            
-        </div>
+        <nav>
+            <Link to="/" id="title">Elite Power</Link>
+            <ul>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
+                <li>
+                    <Link to="/services">Services</Link>
+                </li>
+                <li>
+                    <Link to="/contact">Contact</Link>
+                </li>
+            </ul>
+        </nav>
     )
 }
+export default Navbar

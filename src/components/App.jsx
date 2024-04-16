@@ -1,6 +1,14 @@
 import { useState, useEffect } from 'react'
 import WorkoutContainer from "./WorkoutContainer"
 import WorkoutForm from "./WorkoutForm"
+import Navbar from "./NavBar"
+import {Routes, Route} from "react-router-dom"
+import About from "../Pages/About"
+import Contact from "../Pages/Contact"
+import Services from "../Pages/Services"
+import Program from "../Pages/Program"
+import Home from "../Pages/Home"
+
 
 function App() {
   
@@ -16,21 +24,26 @@ function App() {
 
   return (
     <div className='App'>
-      {/* div for the title */}
-      <div id='title'>
-        <h1 id='elite-power' >Elite <span id='p'>P</span>owe<span id='r'>r</span></h1>
-      </div>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+        <Route path="/program" element={<Program/>}/>
+        <Route path="/services" element={<Services/>}/>
+      </Routes>
 
       <main>
         <div className='flex-container'>
           <WorkoutContainer workouts={workouts} setWorkouts={setWorkouts}/>
         </div>
       </main>
-      <div className='sidebar'>
+      <div className='footer'>
       <WorkoutForm setWorkouts={setWorkouts}/>
       </div>
+      </div>
 
-    </div>
+    
   )
 }
 

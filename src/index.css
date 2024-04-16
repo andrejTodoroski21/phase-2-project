@@ -19,6 +19,9 @@ body{
 }
 #title{
   background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 #p{
   color: red;
@@ -65,7 +68,7 @@ img{
 }
 
 
-.sidebar {
+.footer {
   height: 200px;
   background: black;
   text-align: center;
@@ -84,3 +87,5 @@ img{
   background: #dddddd;
   cursor: pointer;
 }
+
+

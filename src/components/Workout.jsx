@@ -190,7 +190,7 @@ function Workout({workout, workouts, setWorkouts}){
                     </>
                 }
             </div>
-
+                
             <div className="button-styles">
                 <span>
                 <button onClick={decrementReps} id="Dreps-button">-</button>{workout.reps} reps <button onClick={incramentReps} id="Ireps-button">+</button>
@@ -208,6 +208,7 @@ function Workout({workout, workouts, setWorkouts}){
                 <button onClick={() => handleAddToProgram(workout)} id="Add-To-Program">Add to program</button>
                 </span>
             </div>
+            
     </div>
     )
 }

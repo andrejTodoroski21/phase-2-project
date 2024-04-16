@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './components/App'
 //import components here
 import './index.css'
-// import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 // const routes = [
 //   {
@@ -33,8 +33,9 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <RouterProvider router={router}> */}
+    <BrowserRouter>
       <App />
+    </BrowserRouter>
     {/* </RouterProvider> */}
   </React.StrictMode>,
 )

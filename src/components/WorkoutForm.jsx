@@ -48,6 +48,7 @@ function WorkoutForm({ setWorkouts }) {
                 name="description" /> {/* corrected name attribute */}
 
             <button type="submit" id='submit-workout'>Add Workout</button> {/* corrected input type */}
+            
         </form>
     );
 }

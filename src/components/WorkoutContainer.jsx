@@ -8,6 +8,7 @@ function WorkoutContainer({workouts, setWorkouts}){
     return (
         <div className="workout-container">
             {mappedWorkouts}
+            
         </div>
     )
 }
