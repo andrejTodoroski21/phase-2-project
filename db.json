@@ -5,9 +5,9 @@
       "exercise": "Bench Press",
       "image": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Bench-Press.gif",
       "description": "A relaiable and great exercise for building the chest muscles",
-      "weight": 145,
-      "sets": 4,
-      "reps": 10
+      "weight": 135,
+      "sets": 2,
+      "reps": 7
     },
     {
       "id": 2,
@@ -55,13 +55,13 @@
       "reps": 16
     },
     {
-      "exercise": "barbell wrist curl",
-      "image": "https://fitnessprogramer.com/wp-content/uploads/2021/06/Barbell-Reverse-Wrist-Curl.gif",
-      "description": "forearm",
+      "exercise": "Weighted Squat",
+      "image": "https://fitnessprogramer.com/wp-content/uploads/2021/02/BARBELL-SQUAT.gif",
+      "description": "ew yucky leg workout",
       "id": 7,
-      "sets": 2,
-      "reps": 16,
-      "weight": 15
+      "weight": 335,
+      "sets": 3,
+      "reps": 12
     }
   ],
   "SavedWorkouts": [
@@ -72,13 +72,22 @@
       "description": "A relaiable and great exercise for building the chest muscles"
     },
     {
-      "id": 3,
-      "exercise": "Tricep Pushdown",
-      "image": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Pushdown.gif",
-      "description": "The primary focus of this exercise is to target and strengthen the triceps muscles, which are essential for arm extension and pushing movements.",
+      "id": 5,
+      "exercise": "Cable Lateral Raise",
+      "image": "https://fitnessprogramer.com/wp-content/uploads/2021/07/one-arm-Cable-Lateral-Raise.gif",
+      "description": "The cable lateral raise is an effective exercise for targeting the lateral deltoids and improving shoulder strength and stability. It can be incorporated into your upper body or shoulder workout routine, or used as part of a full-body strength training program.",
+      "reps": 14,
+      "sets": 3,
+      "weight": 10
+    },
+    {
+      "id": 2,
+      "exercise": "Double Arm Curl",
+      "image": "https://fitnessprogramer.com/wp-content/uploads/2022/04/Double-Arm-Dumbbell-Curl.gif",
+      "description": "The double arm curl is an isolated exercise commonly used in weight training programs to build and strengthen the biceps muscle group",
       "reps": 12,
       "sets": 3,
-      "weight": 70
+      "weight": 40
     }
   ]
 }
