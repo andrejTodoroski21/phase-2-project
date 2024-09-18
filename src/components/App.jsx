@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-// import WorkoutContainer from "./WorkoutContainer"
 import WorkoutForm from "./WorkoutForm"
 import Navbar from "./Pages/NavBar"
 import {Routes, Route, BrowserRouter as Router} from "react-router-dom"

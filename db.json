@@ -7,7 +7,7 @@
       "description": "A relaiable and great exercise for building the chest muscles",
       "weight": 135,
       "sets": 2,
-      "reps": 7
+      "reps": 10
     },
     {
       "id": 2,
@@ -41,27 +41,24 @@
       "exercise": "Cable Lateral Raise",
       "image": "https://fitnessprogramer.com/wp-content/uploads/2021/07/one-arm-Cable-Lateral-Raise.gif",
       "description": "The cable lateral raise is an effective exercise for targeting the lateral deltoids and improving shoulder strength and stability. It can be incorporated into your upper body or shoulder workout routine, or used as part of a full-body strength training program.",
-      "weight": 10,
-      "sets": 3,
-      "reps": 14
+      "weight": 35,
+      "sets": 5,
+      "reps": 17
     },
     {
       "id": 6,
       "exercise": "Lat Pulldown",
       "image": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif",
       "description": "The lat pulldown is a pulling exercise that primarily targets the latissimus dorsi muscles (commonly known as “lats”) in your back. It involves pulling a cable bar or handle down towards your chest while seated on a machine specifically designed for this exercise. The lat pulldown is typically performed with a wide grip, but can also be done with a narrow grip or underhand grip to target different muscle groups in the back and arms. It is a popular exercise for building upper body strength and improving posture.",
-      "weight": 70,
+      "weight": 80,
       "sets": 2,
       "reps": 16
     },
     {
-      "exercise": "Weighted Squat",
-      "image": "https://fitnessprogramer.com/wp-content/uploads/2021/02/BARBELL-SQUAT.gif",
-      "description": "ew yucky leg workout",
-      "id": 7,
-      "weight": 335,
-      "sets": 3,
-      "reps": 12
+      "exercise": "Hammer Curl",
+      "image": "https://fitnessprogramer.com/wp-content/uploads/2021/06/Barbell-Reverse-Wrist-Curl.gif",
+      "description": "forearm",
+      "id": 7
     }
   ],
   "SavedWorkouts": [
@@ -79,15 +76,6 @@
       "reps": 14,
       "sets": 3,
       "weight": 10
-    },
-    {
-      "id": 2,
-      "exercise": "Double Arm Curl",
-      "image": "https://fitnessprogramer.com/wp-content/uploads/2022/04/Double-Arm-Dumbbell-Curl.gif",
-      "description": "The double arm curl is an isolated exercise commonly used in weight training programs to build and strengthen the biceps muscle group",
-      "reps": 12,
-      "sets": 3,
-      "weight": 40
     }
   ]
 }
