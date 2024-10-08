@@ -23,7 +23,7 @@ function App() {
         <Route path="/services" element={<Services/>}/>
       </Routes>
       <div className="footer">
-      <WorkoutForm />
+      {/* <WorkoutForm /> */}
         </div>
       </div>
     

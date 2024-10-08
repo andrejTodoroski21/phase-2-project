@@ -120,14 +120,14 @@ nav ul li a {
 }
 
 
-.footer {
+/* .footer {
   height: 200px;
   background: black;
   text-align: center;
   padding: 20px 0;
   color: white;
   margin-top: 50px;
-}
+} */
 
 #Dreps-button, #Ireps-button, #Dsets-button, #Isets-button, #Iweight-button, #Dweight-button, #remove, #submit-workout, #Add-To-Program, #handleRemoveSavedWorkout{
   font-size: 12px;
@@ -156,4 +156,9 @@ nav ul li a {
 }
 #jim{
   width: 100%;
+}
+
+video{
+  width: 100%;
+  height: auto;
 }

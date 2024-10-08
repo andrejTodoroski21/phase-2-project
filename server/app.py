@@ -35,6 +35,24 @@ def get_workout(workout_name):
 def get_all_workouts():
     return [i.to_dict() for i in Workouts.query.all()], 200
 
+@app.post("/api/programs")
+def create_program():
+    data = request.get_json()
+    program_name = data.get("name")
+    user_id = session.get("user_id")
+
+    if not program_name:
+        return {"message": "Program name is required"}, 400
+
+    if not user_id:
+        return {"message": "User not authenticated"}, 401
+
+    new_program = Program(name=program_name, user_id=user_id)
+    db.session.add(new_program)
+    db.session.commit()
+
+    return new_program.to_dict(), 201
+
         
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
