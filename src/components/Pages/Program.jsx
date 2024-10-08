@@ -4,19 +4,12 @@ function Program() {
   const [workouts, setWorkouts] = useState([]);
 
 
-  //save specific workouts to the program
-  useEffect(()=>{
-    fetch('api')
-    .then((response)=> response.json())
-    .then((data) = setWorkouts(data))
-  }, []);
-
-  function addWorkoutsToProgram(){
-    
-  }
-
-
-
+// fetch from the program route 
+  // useEffect(()=>{
+  //   fetch('api')
+  //   .then((response)=> response.json())
+  //   .then((data) = setWorkouts(data))
+  // }, []);
 
 
 

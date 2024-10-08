@@ -6,6 +6,7 @@ import Contact from "./Pages/Contact"
 import Services from "./Pages/Services"
 import Program from "./Pages/Program"
 import Home from "./Pages/Home"
+import CreateProgram from "./CreateProgram"
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/program" element={<Program/>}/>
         <Route path="/services" element={<Services/>}/>
+        <Route path="/programs" element={<CreateProgram/>}/>
       </Routes>
       <div className="footer">
       {/* <WorkoutForm /> */}
