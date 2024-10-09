@@ -54,10 +54,28 @@ def create_program():
 
     return new_program.to_dict(), 201
 
-# @app.post("api/users")
-# def create_user():
-#     try:
-#         new_user = User(username = )
+#creating a new user
+@app.post("/api/users")
+def create_user():
+    try:
+        new_user = User(username=request.json['username'], first_name=request.json['first_name'], last_name=request.json['last_name'], email=request.json['email'])
+        new_user._hashed_password = bcrypt.generate_password_hash(request.json['_hashed_password']).decode('utf-8')
+        db.session.add(new_user)
+        db.session.commit()
+        session["user_id"] = new_user.id
+        return new_user.to_dict(), 201
+    except Exception as e:
+        return { 'error': str(e) }, 406
+
+#getting the user id by checking the session
+@app.get('/api/get-session')
+def get_session():
+    user_id = session.get("user_id")
+    if user_id:
+        user = User.query.get(user_id)
+        if user:
+            return user.to_dict(), 200
+    return {}, 204
 
 #logging into your account
 @app.post("/api/login")
