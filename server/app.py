@@ -35,6 +35,7 @@ def get_workout(workout_name):
 def get_all_workouts():
     return [i.to_dict() for i in Workouts.query.all()], 200
 
+#creating a new program here
 @app.post("/api/programs")
 def create_program():
     data = request.get_json()
@@ -53,6 +54,28 @@ def create_program():
 
     return new_program.to_dict(), 201
 
+# @app.post("api/users")
+# def create_user():
+#     try:
+#         new_user = User(username = )
+
+#logging into your account
+@app.post("/api/login")
+def login():
+    username = request.json.get("user")
+    password = request.json.get("password")
+    user = User.query.filter_by(username=username).first()
+
+    if user and bcrypt.check_password(user._hashed_password, password):
+        session["user_id"] = user.id
+        return user.to_dict(), 200
+    else:
+        return {"message": "Username or password is invalid"}, 401
+#logging out of your account
+@app.delete("/api/logout")
+def logout():
+    session.pop("user_id")
+    return {}, 204
         
 if __name__ == '__main__':
     app.run(port=5555, debug=True)

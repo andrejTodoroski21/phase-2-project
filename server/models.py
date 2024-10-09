@@ -10,20 +10,6 @@ metadata = MetaData(naming_convention={
 
 db = SQLAlchemy(metadata=metadata)
 
-# class Workouts(db.Model, SerializerMixin):
-#     __tablename__ = "workouts"
-
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(100), nullable=False)
-#     description = db.Column(db.Text, nullable=False)
-#     videourl = db.Column(db.String, nullable=False)
-#     # foreign key with category
-#     category_id = db.Column(db.Integer, db.ForeignKey("categories.id"), nullable=False)
-#     # Category relationship
-#     category = db.relationship("Category", back_populates="workouts")
-
-#     __serialize_rules__ = ('-id', '-category.workouts', 'name', 'description', 'videourl', 'category.name', '-Category')
-
 class Workouts(db.Model):
     __tablename__ = "workouts"
 
@@ -32,7 +18,9 @@ class Workouts(db.Model):
     description = db.Column(db.Text, nullable=False)
     videourl = db.Column(db.String, nullable=False)
     picture_url = db.Column(db.String, nullable=True)
-    category_id = db.Column(db.Integer, db.ForeignKey("categories.id"), nullable=False)
+    # category_id = db.Column(db.Integer, db.ForeignKey("categories.id"), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey("categories.id", name='fk_workouts_category'), nullable=False)
+
     category = db.relationship("Category", back_populates="workouts")
 
     def to_dict(self):
@@ -66,23 +54,13 @@ class User(db.Model, SerializerMixin):
     first_name = db.Column(db.String, nullable = False)
     last_name = db.Column(db.String, nullable = False)
     email = db.Column(db.String, nullable = False, unique = True)
-    password = db.Column(db.String, nullable = False)
+    username = db.Column(db.String, unique = True, nullable = False)
+    _hashed_password = db.Column(db.String)
 
     # Relationship to the Workouts model
     programs = db.relationship("Program", back_populates="user", cascade="all, delete-orphan")
 
-    __serialize_rules__ = ('-password', 'first_name', 'last_name', 'email', 'programs')
-
-# class Category(db.Model, SerializerMixin):
-#     __tablename__ = "categories"
-
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(50), nullable=False)
-
-#     workouts = db.relationship("Workouts", back_populates="category")
-
-#     __serialize_rules__ = ('-workouts', '-Workouts',)
-
+    __serialize_rules__ = ('-id', '-_hashed_password', 'first_name', 'last_name', 'email', 'username', 'programs')
 
 class Category(db.Model):
     __tablename__ = "categories"
