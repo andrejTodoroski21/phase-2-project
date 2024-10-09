@@ -10,6 +10,7 @@ import Login from "./UserPanel/Login"
 import Signup from "./UserPanel/Signup"
 import { useState } from "react"
 import { Outlet } from 'react-router-dom'
+import UserDetails from "./UserPanel/UserDetails"
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/programs" element={<CreateProgram/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
+        <Route path="logout" element={<UserDetails/>}/>
 
       </Routes>
       <div>

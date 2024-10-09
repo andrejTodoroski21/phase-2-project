@@ -4,19 +4,20 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
 from flask_bcrypt import Bcrypt
+import logging
 
 
 from models import db, User, Workouts, Program, Category
 
 app = Flask(__name__)
-# app.secret_key = os.environ.get('SECRET_KEY')
+app.secret_key = os.environ.get('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.json.compact = False
 
 CORS(app)
 
-# bcrypt = Bcrypt(app)
+bcrypt = Bcrypt(app)
 
 migrate = Migrate(app, db)
 
@@ -66,6 +67,7 @@ def create_user():
         return new_user.to_dict(), 201
     except Exception as e:
         return { 'error': str(e) }, 406
+
 
 #getting the user id by checking the session
 @app.get('/api/get-session')
