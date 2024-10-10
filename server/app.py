@@ -86,7 +86,7 @@ def login():
     password = request.json.get("password")
     user = User.query.filter_by(username=username).first()
 
-    if user and bcrypt.check_password(user._hashed_password, password):
+    if user and bcrypt.check_password_hash(user._hashed_password, password):
         session["user_id"] = user.id
         return user.to_dict(), 200
     else:
@@ -94,7 +94,7 @@ def login():
 #logging out of your account
 @app.delete("/api/logout")
 def logout():
-    session.pop("user_id")
+    session.pop('user_id')
     return {}, 204
         
 if __name__ == '__main__':

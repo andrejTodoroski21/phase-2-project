@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import {useOutletContext} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
+import UserDetails from './UserDetails';
 
 function Login() {
 
   const [user, setUser] = useState('')
   const [password, setPassword] = useState('')
-  const {setCurrentUser} = useOutletContext()
+  const {setCurrentUser} = useOutletContext() || {}
   const navigate = useNavigate();
 
   // SUBMIT EVENT
@@ -23,16 +24,16 @@ function Login() {
       body: JSON.stringify({ user, password })
     }).then(res => {
       if (res.ok) {
-        res.json().then(user => {
-          setCurrentUser(user);
-          navigate('/'); 
-        });
+        res.json().then(user => 
+          setCurrentUser(user)
+        );
       } else {
         alert('Invalid username or password');
       }
     });
   }
 
+  console.log(setCurrentUser);
   // RENDER //
 
   return (
@@ -62,7 +63,9 @@ function Login() {
       />
 
     </form>
+    <div>
 
+    </div>
     </div>
   )
 

@@ -37,6 +37,7 @@ function Signup() {
       }
     })
   }
+  console.log(setCurrentUser);
 
   // RENDER //
 

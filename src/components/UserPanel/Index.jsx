@@ -29,5 +29,4 @@ function UserPanel({currentUser, setCurrentUser}) {
     }
 
 }
-
 export default UserPanel
