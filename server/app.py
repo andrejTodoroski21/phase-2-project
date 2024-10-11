@@ -55,6 +55,18 @@ def create_program():
 
     return new_program.to_dict(), 201
 
+@app.get('/api/users')
+def index():
+    return [u.to_dict() for u in User.query.all()], 200
+
+@app.get('/api/users/<int:id>')
+def users_by_id(id):
+    user = User.query.where(User.id == id).first()
+    if user:
+        return user.to_dict(), 200
+    else:
+        return {'error': 'Not found'}, 404
+
 #creating a new user
 @app.post("/api/users")
 def create_user():
@@ -94,7 +106,7 @@ def login():
 #logging out of your account
 @app.delete("/api/logout")
 def logout():
-    session.pop('user_id')
+    session.pop('user_id', None)
     return {}, 204
         
 if __name__ == '__main__':

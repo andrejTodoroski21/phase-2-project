@@ -16,24 +16,24 @@ function Login() {
     e.preventDefault();
 
     fetch('/api/login', {
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json', 
-        'Accept': 'application/json' 
-      },
-      body: JSON.stringify({ user, password })
-    }).then(res => {
-      if (res.ok) {
-        res.json().then(user => 
-          setCurrentUser(user)
-        );
-      } else {
-        alert('Invalid username or password');
-      }
-    });
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json', 
+          'Accept': 'application/json' 
+        },
+        body: JSON.stringify({ user, password })
+      }).then(res => {
+        if (res.ok) {
+          res.json().then(user => {
+            console.log("User data received:", user);  // Debug the structure of the user object
+            setCurrentUser(user); 
+          });
+        } else {
+          alert('Invalid username or password');
+        }
+      });
   }
 
-  console.log(setCurrentUser);
   // RENDER //
 
   return (
