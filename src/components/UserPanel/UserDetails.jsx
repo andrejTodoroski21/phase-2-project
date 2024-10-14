@@ -1,41 +1,32 @@
-// function UserDetails({currentUser, setCurrentUser}){
+import { useUser } from '../UserContext';
+import { useNavigate } from 'react-router-dom';
 
-//         function handleLogOut(){
-//             setCurrentUser(null);
-//             fetch("/api/logout", {method:"DELETE"})
-//         }
+function UserDetails() {
+  const { currentUser, setCurrentUser } = useUser();  // Access the currentUser and setCurrentUser from context
+  const navigate = useNavigate();
 
-//         return(
-//             <div>
-//                 <h1>User Details</h1>
-//                 <p>Welcome, {setCurrentUser.username}!</p>
-//                 {/* <p>{console.log(currentUser)}</p> */}
-//                 <button onClick={handleLogOut}>Logout</button>
-//             </div>
-//         )
-// }
+  function handleLogOut() {
+    setCurrentUser(null);  // Clear the current user
 
-// export default UserDetails
-function UserDetails({ currentUser, setCurrentUser }) {
-
-    function handleLogOut() {
-      setCurrentUser(null);
-      fetch("/api/logout", { method: "DELETE" });
-    }
-  
-    if (!currentUser) {
-      return <div>Loading...</div>;
-    }
-  
-    return (
-      <div>
-        <h1>User Details</h1>
-        <p>Welcome, {currentUser.user}!</p>
-        <button onClick={handleLogOut}>Logout</button>
-      </div>
-    );
+    // Log out request to the backend
+    fetch("/api/logout", { method: "DELETE" })
+      .then(() => {
+        navigate("/login");  // Redirect to login page
+      });
   }
-  
-  export default UserDetails;
-  
 
+  // Return null if currentUser is not available
+  if (!currentUser) {
+    return <p>Loading...</p>;
+  }
+
+  return (
+    <div>
+      <h1>User Details</h1>
+      <p>Welcome, {currentUser.username}!</p>
+      <button onClick={handleLogOut}>Logout</button>
+    </div>
+  );
+}
+
+export default UserDetails;

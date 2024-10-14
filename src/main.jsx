@@ -1,41 +1,46 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './components/App'
-//import components here
-import './index.css'
-import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import App from './components/App';
+import { UserProvider } from './components/UserContext';// Import the UserProvider
+import Home from './components/Pages/Home';
+import About from './components/Pages/About';
+import Contact from './components/Pages/Contact';
+import Services from './components/Pages/Services';
+import Program from './components/Pages/Program';
+import CreateProgram from './components/CreateProgram';
+import Login from './components/UserPanel/Login';
+import Signup from './components/UserPanel/Signup';
+import UserDetails from './components/UserPanel/UserDetails';
+import "../src/index.css"
 
-// const routes = [
-//   {
-//     path:"/",
-//     element: //this is where you put your components <app/>,
-//     children:[
-//       index: true,
-//       element://<home/>
-//       {
-//         path:"/home",
-//         element: //this is where you put your components
-//       },
-//       {
-//         path:"/home",
-//         element: //this is where you put your components,
-//         children:[{
-//           path: //child path
-//           element: //child element if you want to see the children go into the file and import outlet from react router dom then you add <outlet/> element in the return 
-//         }]
-//       }
-//     ]
-//   },
+// Define your routes
+const routes = [
+  {
+    path: '/',
+    element: <App />,
+    children: [
+      { path: '', element: <Home /> },
+      { path: 'about', element: <About /> },
+      { path: 'contact', element: <Contact /> },
+      { path: 'program', element: <Program /> },
+      { path: 'services', element: <Services /> },
+      { path: 'programs', element: <CreateProgram /> },
+      { path: 'login', element: <Login /> },
+      { path: 'signup', element: <Signup /> },
+      { path: 'logout', element: <UserDetails /> },
+    ],
+  },
+];
 
-// ]
+// Create the router
+const router = createBrowserRouter(routes);
 
-// const router = createBrowserRouter(routes)
-
+// Render the app
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-    {/* </RouterProvider> */}
+    <UserProvider> {/* Wrap UserProvider here */}
+      <RouterProvider router={router} />
+    </UserProvider>
   </React.StrictMode>,
-)
+);
