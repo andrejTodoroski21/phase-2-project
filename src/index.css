@@ -162,3 +162,22 @@ video{
   width: 100%;
   height: auto;
 }
+
+.user-form{
+  display: grid;
+  place-items: center;
+}
+input{
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.user-profile{
+  text-align: center;
+}
+
+.user-profile h1{
+  text-decoration:double;
+}

@@ -21,8 +21,8 @@ function UserDetails() {
   }
 
   return (
-    <div>
-      <h1>User Details</h1>
+    <div className='user-profile'>
+      <h1>Account</h1>
       <p>Welcome, {currentUser.username}!</p>
       <button onClick={handleLogOut}>Logout</button>
     </div>
