@@ -87,7 +87,7 @@ function CreateProgram() {
 
   return (
     <div>
-      <button onClick={openModal}>+ NEW</button>  {/* Button to trigger modal */}
+      <button id="program-btn" onClick={openModal}>Create Program</button>  {/* Button to trigger modal */}
 
       {/* Modal */}
       {isOpen && (
